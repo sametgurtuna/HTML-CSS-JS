@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samet Gürtuna</title>
+    <script
+      type="module"
+      src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"
+    ></script>
+    <link rel="shortcut icon" type="image/jpg" href="img/sabalax.jpg" />
+    <link rel="stylesheet" href="switch.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- CLOSE -->
+    <a href="index.html"><div class="outer">
+      <div class="inner">
+        <label>Back</label>
+      </div>
+    </div></a>
+    
+    <!-- CLOSE -->
+    <section class="social">
+      <div class="wrapper">
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://www.instagram.com/sabalaxvlr/"
+          >
+            <span>Instagram</span></a
+          >
+        </div>
+
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-fonticons"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://www.fiverr.com/sabalax"
+          >
+            <span>Fiverr</span></a
+          >
+        </div>
+
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-bimobject"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://bionluk.com/sabalax"
+          >
+            <span>Bionluk</span></a
+          >
+        </div>
+
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-twitter"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://twitter.com/sabalaxVL"
+          >
+            <span>Twitter</span></a
+          >
+        </div>
+
+        <!-- *LinkedIn -->
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://www.linkedin.com/in/sametgurtuna/"
+          >
+            <span>LinkedIn</span></a
+          >
+        </div>
+
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-youtube"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://www.youtube.com/channel/UCiJ5DWhVeHWe8PC3meeq_eQ"
+          >
+            <span>Youtube</span></a
+          >
+        </div>
+
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <a
+            target="_blank"
+            style="text-decoration: none"
+            href="https://github.com/sabalax"
+          >
+            <span>Github</span></a
+          >
+        </div>
+      </div>
+    </section>
+   
+
+    <!-- COPY TEXT AREA -->
+
+    <h1 class="blue" >Switch Case ATM</h1>
+    
+    <deckgo-highlight-code class="codes" language="css">
+      <code slot="code">
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Text;
+        using System.Threading.Tasks;
+        
+        namespace ATMButSwitchCase
+        {
+            internal class Program
+            {
+                static void Main(string[] args)
+                {
+                    /*
+                     1- Bakiye Görüntüleme
+                     2- Para Çek
+                     3- Para Yatır
+                     4- Çıkış Yap
+                     */
+        
+                    int bakiye = 5900;
+        
+                    Console.WriteLine("ZortBank'a Hoşgeldiniz.");
+        
+                    Console.WriteLine("Lütfen yapmak istediğiniz işlemi seçiniz.");
+                    Console.WriteLine("1- Bakiye Görüntüleme");
+                    Console.WriteLine("2- Para Çek");
+                    Console.WriteLine("3- Para Yatır");
+                    Console.WriteLine("4- Çıkış Yap");
+        
+                    string secim = Console.ReadLine();
+        
+                    switch (secim)
+                    {
+                        case "1":
+                            Console.WriteLine("Bakiyeniz: " + bakiye);
+                            Console.ReadLine();
+        
+                            break;
+                        case "2":
+                            Console.WriteLine("Çekmek istediğiniz miktarı giriniz: ");
+                            int cekilecekMiktar = Convert.ToInt32(Console.ReadLine());
+        
+                            if (cekilecekMiktar > bakiye)
+                            {
+                                Console.WriteLine("Bakiyenizden fazla para çekemezsiniz ");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Kalan Bakiyeniz" + (bakiye - cekilecekMiktar));
+                                Console.ReadLine();
+                            }
+                            break;
+        
+                        case "3":
+                            Console.WriteLine("Yatırmak istediğiniz mikarı giriniz:");
+                            int yatirilacakMiktar = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Yeni Bakiyeniz" + (bakiye + yatirilacakMiktar));
+                            Console.ReadLine();
+        
+                            break;
+        
+                        case "4":
+                            Console.WriteLine("Çıkış Yapılıyor...");
+                            Console.WriteLine("İyi günler dileriz.");
+                            Console.ReadLine();
+        
+                            break;
+        
+                        default:
+                            Console.WriteLine("Lütfen geçerli bir değer giriniz");
+                            Console.ReadLine();
+        
+                            break;
+        
+                            Console.ReadLine();
+                    }
+        
+        
+                }
+            }
+        }
+        
+        
+        
+      </code>
+      </deckgo-highlight-code>
+    <!-- Copy  -->
+    <div class="side-nav-categories">
+      <div class="title"><strong>Category</strong></div>
+      <ul id="category-tabs">
+        <li>
+
+          <p class="cs">C# Projects</p>
+          <ul class="sub-category-tabs">
+            <li><a href="switchcaseatm.html">ATM with Switch Case</a></li>
+            <li><a href="vke.html">Body Mass Index (BMI) Calculator</a></li>
+            <!-- <li><a href="javascript:void">SCSS</a></li> -->
+          </ul>
+        </li>
+      </ul>
+      <ul id="category-tabs">
+        <li>
+          <p class="cs">Python</p>
+          <ul class="sub-category-tabs">
+            <li><a href="digitalclock.html">Digital Clock</a></li>
+            <li><a href="javascript:void">jQuery</a></li>
+            <li><a href="javascript:void">Angular JS</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="category-tabs">
+        <li>
+          <a href="javascript:void" class="main-category"
+            >Server Script<i class="fa fa-minus"></i
+          ></a>
+          <ul class="sub-category-tabs">
+            <li><a href="javascript:void">C#</a></li>
+            <li><a href="javascript:void">PHP</a></li>
+            <li><a href="javascript:void">ASP.Net</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
